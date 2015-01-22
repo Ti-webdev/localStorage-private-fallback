@@ -1,0 +1,32 @@
+{
+  "name": "localStorage-private-fallback",
+  "version": "0.0.1",
+  "description": "localStorage fallback for private mode",
+  "main": "localstorage-private-fallback.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha-phantomjs test/runner.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ti-webdev/localStorage-private-fallback"
+  },
+  "keywords": [
+    "text",
+    "last-line"
+  ],
+  "author": "Ti.webdev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ti-webdev/localStorage-private-fallback/issues"
+  },
+  "homepage": "https://github.com/Ti-webdev/localStorage-private-fallback",
+  "devDependencies": {
+    "gulp-mocha-phantomjs": "~0.3.0",
+    "gulp": "~3.8.6",
+    "jshint-stylish": "~0.4.0",
+    "gulp-jshint": "~1.8.2",
+    "mocha-phantomjs": "~3.5.0",
+    "pageres": "~0.3.0",
+    "phantomjs": "~1.9.7-15"
+  }
+}

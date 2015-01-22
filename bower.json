@@ -1,0 +1,21 @@
+{
+  "name": "localStorage-private-fallback",
+  "version": "0.0.1",
+  "authors": [
+    "Vasily Mikhaylovsky <ti.webdev@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Ti-webdev/localStorage-private-fallback",
+  "main": "index.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "mocha": "~1.21.3",
+    "should": "~3.3.1"
+  }
+}
