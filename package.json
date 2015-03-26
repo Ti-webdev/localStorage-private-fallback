@@ -1,6 +1,6 @@
 {
   "name": "localStorage-private-fallback",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "localStorage fallback for private mode",
   "main": "localstorage-private-fallback.js",
   "scripts": {

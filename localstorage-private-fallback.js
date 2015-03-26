@@ -92,7 +92,7 @@
     return {
       parse: function(str) {
         if (str && key) {
-          return encryptor.dec(JSON.parse(str), key);
+          return JSON.parse(encryptor.dec(str, key));
         }
         else {
           key = generageKey();

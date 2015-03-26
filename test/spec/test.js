@@ -73,14 +73,40 @@ describe('storagePrivateFallback', function() {
     });
   });
 
-    // describe('Encrypt', function() {
-    //   var encryptedStorage = new storagePrivateFallback.WindowNameStorage(GibberishAES);
-    //   encryptedStorage.setItem('test', 'first security data');
-    //   (-1 === window.name.indexOf('first security data')).should.equal(true);
-    //
-    //   var plainStorage = new storagePrivateFallback.WindowNameStorage();
-    //   (null === plainStorage.getItem('test')).should.equal(true);
-    //   plainStorage.setItem('test', 'second security data');
-    //   (-1 !== window.name.indexOf('second security data')).should.equal(true);
-    // });
+  describe('Encrypt', function() {
+    var encryptedStorage, plainStorage;
+
+    afterEach(function(){
+      encryptedStorage.clear();
+      plainStorage.clear();
+    });
+
+    it('should encrypted data', function() {
+      encryptedStorage = new storagePrivateFallback.WindowNameStorage(GibberishAES);
+      encryptedStorage.setItem('test', 'first security data');
+      (window.name.indexOf('first security data')).should.equal(-1);
+
+      plainStorage = new storagePrivateFallback.WindowNameStorage();
+      (null === plainStorage.getItem('test')).should.equal(true);
+      plainStorage.setItem('test', 'second security data');
+      (window.name.indexOf('second security data')).should.not.equal(-1);
+    });
+  });
+
+  describe('Load', function() {
+    var encryptedStorage1, encryptedStorage2;
+
+    afterEach(function(){
+      encryptedStorage1.clear();
+      encryptedStorage2.clear();
+    });
+
+    it('should data saved & loaded', function() {
+      encryptedStorage1 = new storagePrivateFallback.WindowNameStorage(GibberishAES);
+      encryptedStorage1.setItem('test1', 'saved data');
+
+      encryptedStorage2 = new storagePrivateFallback.WindowNameStorage(GibberishAES);
+      'saved data'.should.equal(encryptedStorage2.getItem('test1'));
+    });
+  });
 });
